@@ -1473,3 +1473,22 @@ class rcube_db
         return $matches[1] . $prefix . $matches[count($matches) - 1];
     }
 }
+/*
+docker -e ROUNDCUBEMAIL_DEFAULT_HOST=ssl://mail.africasgeeks.com \
+        -e ROUNDCUBEMAIL_DEFAULT_PORT=993 \
+        -e ROUNDCUBEMAIL_SMTP_SERVER=ssl://mail.africasgeeks.com \
+        -e ROUNDCUBEMAIL_SMTP_PORT=465 \
+        -e ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE=10M \
+        -e ROUNDCUBEMAIL_ASPELL_DICTS="de,fr,en" \
+
+
+
+        -v /opt/roundcube/html:/var/www/html \
+        -v /opt/roundcube/config:/var/roundcube/config \
+        -v /opt/roundcube/db:/var/roundcube/db \
+        -v /opt/roundcube/temp:/tmp/roundcube-temp \
+        -p "127.0.0.1:8008:80" \
+        --name iim_webmail \
+        -d roundcube/roundcubemail
+
+*/
